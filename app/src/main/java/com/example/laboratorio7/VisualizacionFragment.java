@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-public class RegistroFragment extends Fragment {
+public class VisualizacionFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_registro, container, false);
+        return inflater.inflate(R.layout.fragment_visualizacion, container, false);
     }
 }

@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
@@ -41,6 +42,7 @@ public class RegistroFragment extends Fragment {
                 String year = editTextYear.getText().toString();
 
                 saveToFile(author, title, technique, category, description, year);
+                showVisualizacionFragment();//Añadimos la llamada aquí
             }
         });
 
@@ -64,5 +66,11 @@ public class RegistroFragment extends Fragment {
             e.printStackTrace();
             Toast.makeText(getActivity(), "Error al guardar datos", Toast.LENGTH_SHORT).show();
         }
+    }
+    private void showVisualizacionFragment() {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, new VisualizacionFragment());
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
